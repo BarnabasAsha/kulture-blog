@@ -32,6 +32,7 @@ export default {
 <style scoped>
 .post {
   min-width: 350px;
+  max-width: 350px;
   width: 350px;
   height: 400px;
   background-color: #000000;
@@ -95,6 +96,7 @@ export default {
 @media screen and (max-width: 800px) {
   .post {
     min-width: 250px;
+    max-width: 250px;
     width: 250px;
     height: 320px;
   }
@@ -103,6 +105,7 @@ export default {
 @media screen and (max-width: 500px) {
   .post {
     min-width: 230px;
+    max-width: 230px;
     width: 230px;
     height: 300px;
   }

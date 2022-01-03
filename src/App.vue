@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style>
-@import url("http://fonts.cdnfonts.com/css/space-grotesk");
+@import url("https://fonts.cdnfonts.com/css/space-grotesk");
 
 * {
   box-sizing: border-box;

@@ -124,6 +124,10 @@ export default {
 }
 
 @media screen and (max-width: 800px) {
+  .header {
+    height: 80px;
+  }
+
   .header_nav {
     border-top: 0;
   }
