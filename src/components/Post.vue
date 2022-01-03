@@ -1,12 +1,5 @@
 <template>
   <a href="#" class="post">
-    <div
-      class="post_img"
-      :style="{
-        backgroundImage: `url(${require(`../assets/${img}.png`)})`,
-        backgroundSize: 'cover',
-      }"
-    ></div>
     <div class="post_content">
       <h3 class="post_title">{{ title }}</h3>
       <div>
@@ -14,6 +7,13 @@
         <div class="post_author">{{ author }}</div>
       </div>
     </div>
+    <div
+      class="post_img"
+      :style="{
+        backgroundImage: `url(${require(`../assets/${img}.png`)})`,
+        backgroundSize: 'cover',
+      }"
+    ></div>
   </a>
 </template>
 
@@ -31,8 +31,9 @@ export default {
 
 <style scoped>
 .post {
-  width: 320px;
-  height: 350px;
+  min-width: 350px;
+  width: 350px;
+  height: 400px;
   background-color: #000000;
   margin-bottom: 2em;
   margin-right: 2em;
@@ -52,7 +53,11 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0.5em 1em;
+  padding: 1em;
+}
+
+.post_content:hover + .post_img {
+  transform: scale(1.1);
 }
 
 .post_img {
@@ -62,12 +67,15 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
+  transition: all ease-in-out 0.7s;
 }
 
 .post_title {
   font-size: 1.4rem;
-  letter-spacing: 10px;
+  line-height: 2.4rem;
+  letter-spacing: 12px;
   font-weight: 500;
+  margin-top: 0;
 }
 
 .post_label {
@@ -80,6 +88,37 @@ export default {
   font-size: 0.9rem;
   font-weight: 400;
   letter-spacing: 6px;
-  line-height: 2rem;
+  line-height: 1rem;
+  margin-top: 8px;
+}
+
+@media screen and (max-width: 800px) {
+  .post {
+    min-width: 250px;
+    width: 250px;
+    height: 320px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .post {
+    min-width: 230px;
+    width: 230px;
+    height: 300px;
+  }
+
+  .post_title {
+    font-size: 1.2rem;
+    letter-spacing: 8px;
+    font-weight: 500;
+  }
+
+  .post_label {
+    font-size: 0.6rem;
+  }
+
+  .post_author {
+    font-size: 0.8rem;
+  }
 }
 </style>

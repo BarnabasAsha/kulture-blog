@@ -9,14 +9,14 @@
         </div>
       </div>
       <div class="posts_roll">
-        <div v-for="post in postData" :key="post.title" class="glide__slide">
-          <Post
-            :title="post.title"
-            :img="post.img"
-            :genre="post.genre"
-            :author="post.author"
-          />
-        </div>
+        <Post
+          v-for="post in postData"
+          :key="post.title"
+          :title="post.title"
+          :img="post.img"
+          :genre="post.genre"
+          :author="post.author"
+        />
       </div>
     </div>
     <div class="posts_block"></div>
@@ -66,11 +66,13 @@ export default {
 
 <style scoped>
 .posts {
+  width: 100%;
   position: relative;
   margin-top: -260px;
   width: 100%;
   display: grid;
   grid-template-columns: 2fr 12fr 2fr;
+  overflow-x: hidden;
 }
 
 .posts_block {
@@ -81,7 +83,7 @@ export default {
 
 .posts_heading {
   position: relative;
-  width: 220px;
+  width: 250px;
   height: 140px;
   display: flex;
   justify-content: center;
@@ -93,20 +95,20 @@ export default {
 
 .posts_heading_svg {
   position: absolute;
-  right: 33px;
-  bottom: 28px;
-  width: 18px;
+  right: 20px;
+  bottom: 25px;
+  width: 20px;
 }
 
 .posts_heading h2 {
-  font-size: 1.6rem;
-  letter-spacing: 10px;
-  font-weight: 400;
+  font-size: 2rem;
+  letter-spacing: 16px;
+  font-weight: 500;
 }
 
 .posts_container {
   padding: 50px 0;
-  height: 550px;
+  height: 670px;
 }
 
 .posts_roll {
@@ -115,7 +117,47 @@ export default {
   top: 200px;
   left: 12.5%;
   display: flex;
-  /* justify-content: flex-end; */
   margin-top: 1.8em;
+  overflow-x: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.posts_roll::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .posts_container {
+    height: auto;
+  }
+  .posts_roll {
+    top: 0;
+    left: 0;
+    /* margin-top: 0; */
+    position: static;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .posts {
+    margin-top: -200px;
+  }
+
+  .posts_heading {
+    height: 100px;
+    width: 180px;
+  }
+
+  .posts_heading h2 {
+    font-size: 1.5rem;
+  }
+
+  .posts_heading_svg {
+    right: 12px;
+    bottom: 12px;
+    width: 15px;
+  }
 }
 </style>

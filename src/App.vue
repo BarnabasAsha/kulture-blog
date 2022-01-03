@@ -26,12 +26,16 @@ export default {
 <style>
 @import url("http://fonts.cdnfonts.com/css/space-grotesk");
 
-body {
+* {
   box-sizing: border-box;
+}
+
+body {
   margin: 0;
   padding: 0;
   font-family: "Space Grotesk", sans-serif;
-  overflow-x: hidden;
+  width: 100%;
+  overflow-x: hidden !important;
 }
 
 a {
