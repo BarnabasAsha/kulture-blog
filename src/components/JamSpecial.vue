@@ -27,9 +27,8 @@ export default {
 
 <style scoped>
 .jam_special {
-  min-width: 310px;
-  max-width: 310px;
-  width: 310px;
+  min-width: 280px;
+  width: 280px;
   height: 400px;
   margin-bottom: 2em;
   margin-right: 2em;
@@ -64,7 +63,6 @@ export default {
 @media screen and (max-width: 800px) {
   .jam_special {
     min-width: 230px;
-    max-width: 230px;
     width: 230px;
     height: 300px;
   }
@@ -73,7 +71,6 @@ export default {
 @media screen and (max-width: 500px) {
   .jam_special {
     min-width: 200px;
-    max-width: 200px;
     width: 200px;
     height: 270px;
   }
